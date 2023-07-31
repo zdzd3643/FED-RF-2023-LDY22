@@ -11,15 +11,21 @@
 
             /* 웹폰트 CDN(Content Delevery Network) */
             @import url("https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Black+Han+Sans&family=Nanum+Gothic&family=Single+Day&display=swap");
-            /* 
+
+            /*
+                웹폰트 font-family 이름
+                font-family: 'Bagel Fat One', cursive;
+                font-family: 'Black Han Sans', sans-serif;
+                font-family: 'Nanum Gothic', sans-serif;
+                font-family: 'Single Day', cursive;
+            */
+
+            /*
                 @import url(주소)
                 - 외부CSS를 불러올 때 사용하는 형식
                 - 외부CSS 파일을 하나로 합칠 때 많이 사용함
-                
-                
             */
 
-            /*   */
             /*
               [ 모든 요소 공통 디자인요소 : 박스모델 ]
               1. 크기 : width 가로, height 세로
@@ -28,6 +34,7 @@
               4. 외부여백 : margin
               (여백공통방향:top,bottom,left,right)
 
+               ______________________________
 
               [ CSS 속성셋팅 형식 ]
               선택자{
@@ -44,17 +51,30 @@
 
 
             */
+
+            /* 요소의 초기화
+            -기존에 기본셋팅값중 마진/패딩 초기화 */
+            html,body,h1,h2{
+                margin: 0;
+                padding: 0;
+
+            }
+
+
             /* 레이아웃 박스 공통 디자인 */
             .bx {
                 /* 크기 : w800 -> 가로크기 */
                 width: 800px;
                 /* 외곽선 : bd -> 두께 종류 색상 */
-                border: 4px double darkblue;
+                /* border: 4px double darkblue; */
+                border: 3px dashed rgb(34, 238, 238);
+
                 /* 패딩 */
                 padding: 20px;
                 /* 마진 : 마영오! 씨를 무대중앙으로 모시겠습니다 */
                 margin: 0 auto;
                 /* 양쪽마진을 auto로 쓰면 등분할되어 박스가 중앙위치 */
+
                 /*
                   [ 마진/패딩 공통 개수별 정의 ]
                   margin: 4방향;(1개)
@@ -62,15 +82,25 @@
                   margin: 위 양쪽 아래;(3개)
                   margin: 위 오른 아래 왼;(4개-시계방향)
                 */
+
                 /* 텍스트 중앙 : tac */
                 text-align: center;
+
+                /* 둥근 모서리 */
+                border-radius: 15px;
             }
 
             /* 메인이미지 */
             .cimg {
-                width: 800px;
+                width: 100%;
                 /* w100p */
+                /* 
+                    100%의 기준은 싸고 있는 블록박스의
+                    content 영역을 말함
+                    (보더/패딩 제외 내부영역)
+                */
             }
+
             /* 1. 상단영역 */
             #top {
                 background-color: #f5ff6a;
@@ -81,14 +111,14 @@
                 font-size: 40px;
                 font-weight: normal; /* fwn 글자두께 기본 */
                 font-family: 'single day','궁서';
-                /* 
+                /*
                   font-family 글씨체
                   값 - 콤마로 구분하여 우선순위 적용함
                   (상위체가 없으면 하위체를 적용, 하위체도 없으면 브라우저 기본체로 표시)
                 */
-                
-                
-                /* 
+
+
+                /*
                   text-shadow : 글자그림자
                   값 - x축 y축 블러(경계흐림) 색
                   -> 콤마로 다중 그림자 사용가능
@@ -102,7 +132,7 @@
                 font-size: 25px; /* fz */
                 font-family: "Black Han Sans"; /* ff */
                 font-weight: normal;
-                vertical-align: -4px;
+                vertical-align: -4px; /* va-4 */
                 /* vertical-align : 인라인요소간 세로정렬 값
               - top/bottom/middle/baseline/수치 */
             }
@@ -135,19 +165,18 @@
               font-family: 'Bagel Fat One';
               color:#030a02;
             }
+            /* 대표자 span */
+            span.utxt{
+                text-decoration: underline;
+                text-decoration-style: dotted;
+                text-decoration-color: red;,
             /* 종속선택자로 같은 이름의 클래스인데 다른 디자인으로 변경하여 셋팅하기 */
             b.utxt{
                 text-decoration: underline;
                 text-decoration-style: wavy;
                 text-decoration-color: #fa50e3;
             }
-            /* 대표자 span */
-            span.utxt{
-                text-decoration: underline;
-                text-decoration-style: dotted;
-                text-decoration-color: red;,
             }
-
         </style>
     </head>
     <body>
@@ -161,9 +190,10 @@
                 <a href="">
                     <!-- 상대경로 -->
                     <img src="./images/logo.png" alt="네이버로고" style="width: 24px" />
+                    <!-- style 속성으로 css를 셋팅하는 방법은 인라인방식이라고 함 -->
+
                     <!-- 절대상대경로 -->
                     <!-- <img src="/001.HTML학습/01.Info_PJ/images/logo.png" alt="네이버로고"> -->
-                    <!-- style 속성으로 css를 셋팅하는 방법은 인라인방식이라고 함 -->
                     <!-- 절대경로 -->
                     <!-- <img src="https://t1.daumcdn.net/daumtop_chanel/op/20200723055344399.png" alt="다음로고"> -->
                 </a>
@@ -202,8 +232,6 @@
             (source)
             2) alt : 이미지 설명(웹접근성)
             (alternative text - 대체텍스트)
-
-
 
         [ 레이아웃을 위한 블록요소 ]
         div : 영역을 나누고 묶어주는 요소
