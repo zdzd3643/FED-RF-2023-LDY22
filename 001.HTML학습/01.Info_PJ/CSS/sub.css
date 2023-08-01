@@ -16,7 +16,7 @@ h2.stit {
     font-weight: normal;
     font-family: "Black Han Sans";
     text-align: center;
-    text-shadow: 2px 2px 2px #347811;
+    text-shadow: 3px 3px 3px #070802;
     border-radius: 10px;
     /* outline: 1px solid red; */
     /* 
@@ -63,21 +63,25 @@ h2.st1 {
     /* 배경이미지 */
     background-image: url(../images/afig1-1.jpg);
     background-position-y: -80px;
+    color: white;
 }
 h2.st2 {
     /* 배경이미지 */
     background-image: url(../images/afig2-1.jpg);
     background-position-y: -150px;
+    color: blanchedalmond;
 }
 h2.st3 {
     /* 배경이미지 */
     background-image: url(../images/afig3-2.jpg);
     background-position-y: -50px;
+    color: palegreen;
 }
 h2.st4 {
     /* 배경이미지 */
     background-image: url(../images/afig4.jpg);
     background-position-y: -185px;
+    color: yellow;
 }
 /* TV/연예 배경이미지 */
 h2.st5 {
