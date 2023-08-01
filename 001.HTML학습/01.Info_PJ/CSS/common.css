@@ -55,7 +55,7 @@
 html,
 body,
 h1,
-h2 {
+h2, figure {
     margin: 0;
     padding: 0;
 }
@@ -63,13 +63,21 @@ h2 {
 /* 레이아웃 박스 공통 디자인 */
 .bx {
     /* 크기 : w800 -> 가로크기 */
-    width: 800px;
+    /* width: 800px; */
+
+    max-width: 1000px; /* maw: max-width */
+    /* 최대가로크기 1000px의 의미는 1000px보다 안커지고 
+    작을 경우 auto로 전환함(부모박스 크기로 맞춤) */
+
+    /* min-width: 700px; */
+    /* 최소가로크기를 설정하면 최소크기보다 작아지지 않는다! */
+
     /* 외곽선 : bd -> 두께 종류 색상 */
     /* border: 4px double darkblue; */
     border: 3px dashed rgb(34, 238, 238);
 
     /* 패딩 */
-    padding: 20px;
+    padding: 30px;
     /* 마진 : 마영오! 씨를 무대중앙으로 모시겠습니다 */
     margin: 0 auto;
     /* 양쪽마진을 auto로 쓰면 등분할되어 블록박스가 중앙위치 */
@@ -129,9 +137,9 @@ h2 {
 }
 /* 메뉴링크  */
 #gnb a {
-    color: hsl(260, 36%, 5%);
+    color: #303803;
     text-decoration: none; /* tdn */
-    font-size: 30px; /* fz */
+    font-size: 27px; /* fz */
     font-family: "Black Han Sans"; /* ff */
     font-weight: normal;
     vertical-align: -4px; /* va-4 */
@@ -164,8 +172,9 @@ h2 {
 #info address {
     /* 기본글자 이탤릭 스타일 없애기 */
     font-style: normal;
-    font-family: "Bagel Fat One";
+    font-family: 'Single Day', cursive;
     color: #030a02;
+    font-size: 20px;
 }
 /* 대표자 span */
 span.utxt {
