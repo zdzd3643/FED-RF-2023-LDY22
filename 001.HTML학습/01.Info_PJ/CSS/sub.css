@@ -228,7 +228,8 @@ h2.st5 {
     border-bottom: 2px dashed #ccc;
     padding: 20px 0;
     line-height: 2;
-}
+    font-size: 15px;
+}   
 .desc div{
     padding: 15 0;
 }    
