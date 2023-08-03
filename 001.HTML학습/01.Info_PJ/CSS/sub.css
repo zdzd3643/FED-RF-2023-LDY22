@@ -146,6 +146,32 @@ h2.st5 {
     
 }
 
+/* 강조em요소 디자인변경 */
+.acont p em{
+    /* 이탤릭해제 */
+    font-style: normal;
+    /* 글자색 변경 */
+    color: #068168;
+    /* 글자 두껍게 */
+    font-weight: bold;
+    /* 글자그림자 */
+    text-shadow: 2px 2px 2px #01aa1d;
+}
+
+.acont p mark{
+    display: block;
+    width: 65%;
+    background-color: #ebebeb;
+    text-align: center;
+    margin: 15px 0;
+    padding: 20px 50px;
+    font-size: 20px;
+    border-top: 2px solid gray;
+    border-bottom: 2px solid gray;
+    color: darkcyan;
+    font-family: "Black Han Sans";
+}
+
 /* 유튜브 동영상박스 */
 .mvbx {
     height: 550px;
