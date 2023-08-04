@@ -143,11 +143,10 @@ h2.st5 {
     단위를 쓰면 단위에 맞게 줄간격 조정됨 
     -> 줄간격의 응용은 버튼 등의 글자를
     세로 중앙에 오게 할 때 박스 높이 값만큼 준다! */
-    
 }
 
 /* 강조em요소 디자인변경 */
-.acont p em{
+.acont p em {
     /* 이탤릭해제 */
     font-style: normal;
     /* 글자색 변경 */
@@ -158,7 +157,7 @@ h2.st5 {
     text-shadow: 2px 2px 2px #01aa1d;
 }
 
-.acont p mark{
+.acont p mark {
     display: block;
     width: 65%;
     background-color: #ebebeb;
@@ -183,33 +182,32 @@ h2.st5 {
         자동으로 채워준다
     */
 }
-.mvbx iframe{
+.mvbx iframe {
     border: none;
     width: 100%;
     height: 100%;
 }
 
 /* 인용블록 영역 */
-.bqbx{
+.bqbx {
     padding: 20px 0;
     margin: 20px 0;
     border-top: 2px dashed #ccc;
     border-bottom: 2px dashed #ccc;
     font-size: 15px;
 }
-.bqbx blockquote{
-    padding: 15px 0; 
+.bqbx blockquote {
+    padding: 15px 0;
     line-height: 2;
-
 }
 /* 인용블록 이미지 */
-.bqbx img{
+.bqbx img {
     float: right;
     border-radius: 5px;
     margin-left: 20px;
 }
 /* article 제목 공통 - .atbx */
-.atbx h5{
+.atbx h5 {
     /* 배경색 */
     background-color: #ebebeb;
     /* 패딩 */
@@ -229,23 +227,23 @@ h2.st5 {
     padding: 20px 0;
     line-height: 2;
     font-size: 15px;
-}   
-.desc div{
+}
+.desc div {
     padding: 15 0;
-}    
+}
 
 /* 기사원문 */
-.alink{
+.alink {
     text-align: right;
 }
-.alink a{
+.alink a {
     /* 디자인적용위해 display 변경하기 */
     display: inline-block;
     width: 70px;
     height: 70px;
-    border: 1px solid darkcyan; 
+    border: 1px solid darkcyan;
     border-radius: 50%; /* 원형 */
-    
+
     /* 줄간격으로 세로 글자 중앙 
     - 높이값과 같음 */
     line-height: 70px;
@@ -255,28 +253,25 @@ h2.st5 {
     color: rgb(102, 11, 90);
     text-decoration: none;
     background-color: #ccc;
+}
 
-    }
+/* 마우스 오버시 변경 */
+.alink a:hover {
+    color: rgb(44, 3, 68);
+    background-color: aquamarine;
+    box-shadow: 0 0 10px 5px darkblue;
+}
 
-    /* 마우스 오버시 변경 */
-    .alink a:hover{
-        color: rgb(44, 3, 68);
-        background-color: aquamarine;
-        box-shadow: 0 0 10px 5px darkblue;
-    }
+/* 오늘의 작품&느낌 */
+.work {
+    text-align: center;
+    /* 배경색 */
+    /* background-color: lightpink; */
 
-    /* 오늘의 작품&느낌 */
-    .work{
-        text-align: center;
-        /* 배경색 */
-        /* background-color: lightpink; */
+    /* 그라데이션 -> 이미지로! bgi */
+    background-image: linear-gradient(40deg, #ff000085 50%, #0000ff91, #ff9600f5);
 
-        /* 그라데이션 -> 이미지로! bgi */
-        background-image: linear-gradient(40deg, #ff000085 50%, #0000ff91, #ff9600f5);
-        
-        
-        
-        /* [ 선형 그라데이션 : linear-gradient()]
+    /* [ 선형 그라데이션 : linear-gradient()]
         linear-gradient(방향,색1,색2);
         linear-gradient(방향,색1,몇%, 색2 몇%);
         linear-gradient(각도,색1,몇%, 색2 몇%);
@@ -284,12 +279,11 @@ h2.st5 {
         1. 방향: to top, to bottom, to left, to right
         2. 각도 : 각도deg
         3. 콤마로 나열된 색상에 %를 뒤에 쓰면 비율 조정가능! */
-        
-        
-        /* border: 50px dotted #09a1ff; 
+
+    /* border: 50px dotted #09a1ff; 
         padding: 50px; */
 
-        /* 
+    /* 
             배경옵션 추가!!! 
             background-clip: 배경이 적용되는 범위설정;
             1. border-box -> 보더까지 적용(기본값)
@@ -297,46 +291,161 @@ h2.st5 {
             3. content-box -> 내용영역만 적용(패딩, 보더빠짐)
             
         */
-        background-clip: content-box;
-        box-shadow: inset 0 0 10px #0000006f;
-    }
+    background-clip: content-box;
+    box-shadow: inset 0 0 10px #0000006f;
+}
 
-    /* 작품 타이틀 */
-    .work h3{
-        font-family: 'Single Day', cursive;
-        font-weight: normal;
-        font-size: 36px;
-        color: #231e1e;
-        padding-top: 20px;
-    }
-    /* 작품 이미지 */
-    .work img{
-        border: 15px ridge goldenrod;
-        /* ridge - 액자틀모양 */
-    }
+/* 작품 타이틀 */
+.work h3 {
+    font-family: "Single Day", cursive;
+    font-weight: normal;
+    font-size: 36px;
+    color: #231e1e;
+    padding-top: 20px;
+}
+/* 작품 이미지 */
 
-    /* 작품명 */
-   .work {
-       font-family: 'Bagel Fat One', cursive;
-       font-size: 20px;
-       padding: 10px;
-   }
+.work img {
+    /* ridge - 액자틀모양 */
+    border: 15px ridge goldenrod;
+}
 
-    /* 작품명 인용구 */
+/* 작품명 */
+.work figcaption {
+    font-family: "Bagel Fat One", cursive;
+    font-size: 20px;
+    padding: 10px;
+}
+/* 작품명 인용구  */
 .work figcaption cite {
     font-style: normal;
-    color: #0000006f;
+    color: darkmagenta;
+}
 
+/* 뉴스 파트 공통 class */
+.nbx {
+    border-top: 2px dashed #ccc;
+    margin: 20px 0;
+    padding: 20px 0;
+}
+/* 뉴스 파트 공통 a요소 */
+.nbx a {
+    /* 글자크기 fz */
+    font-size: 17px;
+    /* 줄간격 1h */
+    line-height: 2.5;
+    /* 글자색 c */
+    color: #222;
+    /* 밑줄없앰 */
+    text-decoration: none;
+}
+/* 공통 a마우스 오버 */
+.nbx a:hover {
+    color: yellowgreen;
+    text-shadow: 1px 1px 1px #000;
+}
+/* 뉴스 타이틀 공통 */
+.nbx h3 {
+    font-family: "Single Day", cursive;
+    font-weight: normal;
+    font-size: 30px;
+    background-image: linear-gradient(to right, rgb(94, 164, 255), transparent);
+    padding: 10px;
+}
+
+/* 한줄 말줄임표시하기 공통처리 */
+.nbx li,
+.nbx dd,
+.nbx td  {
+    /* 1. 줄바꿈 방지 */
+    white-space: nowrap;
+    /* 2. 넘치는 컨텐츠 숨기기 oh */
+    overflow: hidden;
+    /* 3. 넘치는 글자 말줄임표시 */
+    text-overflow: ellipsis;
+    /* 
+        추가) 여러줄일때 말줄임은 아래 3가지 추가
+        display: -webkit-box;
+        -webkit-line-clamp: 라인수;
+        -webkit-box-orient: vertical;
+        단, 박스 높이값을 글자가 보일만큼 조절함
+    */
+}
+
+/* 주요뉴스 ul */
+.cnews ul li::before {
+    content: "😤";
+}
+.cnews ul li::after {
+    content: "😎";
+    /* content: url(../images/afig4-2.jpg); */
+}
+/* 
+    [ CSS 가상요소 : before, after ]
+    - 모든 요소는 맨앞과 맨뒤에 가상요소를 사용할 수 있다
+    - 맨앞은 before, 맨뒤는 after
+    - 필수속성 : content
+    - 이미지는 url() 사용!
+*/
+
+/* 주요뉴스 li별 글자색 바꾸기 */
+.cnews li:first-child a {
+    color: red;
+}
+
+.cnews li:nth-child(2) a {
+    color: blue;
+}
+.cnews li:nth-child(3) a {
+    color: green;
+}
+
+/* 분야별 뉴스 */
+.snews dt {
+    font-family: "Single Day", cursive;
+    font-size: 28px;
+    background-color: lightblue;
+    display: inline-block;
+    padding: 15px;
+    border-radius: 50%;
+    border: 4px dashed blue;
+    margin-top: 55px;
 }
 
 
+/* dd앞에 가상요소로 블릿넣기 */
+.snews dd::before {
+    content: "🤔";
+}
 
-    /* 뉴스 파트 공통 class */
-    .nbx{
-        border-top: 2px dashed #ccc;
-        margin: 20px 0;
-        padding: 20px 0;
-         
+/* 분야별뉴스 dt별 글자색, 배경색변경하기 */
+.snews dt:first-of-type{
+    color: red;
+    background-color: lightpink;
+    border-color: darkblue;
+}
+.snews dt:nth-of-type(2){
+    color: black;
+    background-color: lightgreen;
+    border-color: darkolivegreen;
+}
+.snews dt:last-of-type{
+    color: darkolivegreen;
+    background-color: lightcyan;
+    border-color: darkmagenta;
+}
 
+/* 
 
-    }
+[ 자식요소 선택 가상클래스 : 자식요소 종류가 같아야함! ]
+    요소:first-child -> 첫번째 자식요소
+    요소:nth-child(n) -> n번째 자식요소
+    요소:last-child -> 마지막째 자식요소
+
+[ 여러종류가 섞여 있을 경우 형제 선택하기 ]
+    요소:first-of-type -> 같은 요소 중 첫번째
+    요소:nth-of-type(n) -> 같은 요소 중 n번째
+    요소:last-of-type -> 같은 요소 중 마지막째
+    
+    (단, n은 1부터)
+*/
