@@ -356,7 +356,7 @@ h2.st5 {
 /* 한줄 말줄임표시하기 공통처리 */
 .nbx li,
 .nbx dd,
-.nbx td  {
+.nbx td   {
     /* 1. 줄바꿈 방지 */
     white-space: nowrap;
     /* 2. 넘치는 컨텐츠 숨기기 oh */
