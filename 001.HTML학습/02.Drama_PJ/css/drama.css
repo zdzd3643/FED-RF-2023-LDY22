@@ -23,11 +23,11 @@ html,body{
 */
 
 /* 테이블 공통 클래스 */
-.tdl{
+.tbl{
     /* 글자체 */ 
     font-family: 'Hahmlet', serif;
     /* 글자색 */
-    color: #333;
+    color: #222;
     /* 기본테이블 간극없애기 */
     border-collapse: collapse;
     /* 기본값 seperate */
@@ -64,6 +64,32 @@ html,body{
 }
 /* tbody의 마지막 tr의 td 아랫줄 두꺼운 보더 넣기 */
 #drama tbody tr:last-child td{
-    border-top: 2px solid #555;
     border-bottom: 2px solid #555;
 }
+/* 짝수번째 tbody tr의 td에 배경색 넣기 */
+#drama tbody tr:nth-child(even) td{
+    background-color: #e4e4e4;
+}
+
+/* 하단부분(tfoot) */
+#drama tfoot td{
+    text-align: center;
+    padding: 45px 0;
+}
+
+/* 링크 a 공통변경 */
+#drama a{
+    color: #333;
+    text-decoration: none;
+}
+/* 드라마명 a 오버시 */
+#drama tbody a:hover{
+    color: hotpink;
+    text-decoration: underline;
+    text-decoration-style: wavy;
+} 
+#drama tfoot a:hover{
+    color: darkgreen;
+    text-decoration: overline
+    text-decoration-style: double;
+} 
