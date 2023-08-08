@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>03. absolute 포지션</title>
+    <title>04. fixed 포지션</title>
     <style>
         .bx{
             width: 300px;
@@ -14,11 +14,71 @@
             /* 글자세로중앙 */
             line-height: 300px;
         }
+        
+        /* fixed 박스 공통 */
+        .fxbx{
+            position: fixed; /* pof */
+            /*****************************************************
+                [ 4. fixed 포지션 ]
+                1. 보이는 화면을 기준한 포지션이다!
+                -> 대부분의 속성은 absolute와 같으나
+                부모만 다르다고 보면 된다!
+                
+                2. 스크롤이 내려갈때 요소가 그대로 화면에 멈춰있다!
 
+                3. 위치속성값을 설정하지 않으면 젠틀하다!
+                -> 젠틀픽스드!! (젠틀앱솔루트와 같음!)
 
+                4. 크기설정을 하지 않으면 내용만큼 자동크기설정됨
+                -> 픽스드 판타롱스타킹!!! (앱솔루트와 같음)
+
+                5. 인라인요소도 fixed를 주면 block으로 자동전환됨!
+
+                6. 부모요소가 아무리 많이 싸여있어도 fixed를 주면
+                화면을 기준하여 위치를 잡는다!
+
+                7. 이미 부모가 fixed이면 자손요소는 fixed를 할 필요가 없다!
+
+                8. 활용도
+                1) 스크롤에 관계없이 화면고정시
+                2) 화면바깥에 숨겼다가 나타나기를 할때
+                3) 보이는 화면을 기준하는 구현의 모든경우
+
+                (유의: 배경고정과는 다르다! 배경고정은 보이는 화면을 기준한
+                )
+            *****************************************************/
+            background: url(./images/ab0.jpg) repeat-x 0/auto 100%;
+            color: #fff;
+            z-index: 999;
+            width: 100%;
+            height: 200px;
+            font-size: 35px;
+            line-height: 200px;
+            text-align: center;
+        }
+
+        /* 두번째 fixed 박스 */
+        .f2{
+            top: 0;
+        }
+        .f1{
+            position: fixed;
+            background-color: lightblue;        
+            z-index: 999;
+            width: 100%;
+            height: 200px;
+            font-size: 35px;
+            line-height: 200px;
+            text-align: center;
+        }
+        
+        
         /* 첫번째 앱솔루트!!!  */
-            #a1{
+        #a1{
             position: absolute;/* poa */
+            background: url(./images/ab1.jpg) no-repeat center/cover;
+        }
+            
 
         /************************************************************
 
@@ -49,7 +109,7 @@
             - 위치이동값을 사용한 부분에 대해서만!!!!
             앱솔루트가 위치를 잡을때 기준이 되는 부모는 
             static이 아닌 요소가 부모다!
-
+            
             -> static이 아닌 포지션이란?
             relative / absolute / fixed / sticky
 
@@ -104,7 +164,7 @@
             8. 위치이동값을 전부 다 쓰는 경우도 있다!
             -> 부모박스를 가득 채우거나 일정위치를 잡고
             크기가 유동적이어야 할때 사용함!
-
+            
             예) 부모박스를 채우는 앱솔루트?
             position: absolute;
             top: 0;
@@ -114,8 +174,6 @@
             (단, width, height값을 설정안함!)
 
         ************************************************************/
-        background: url(./images/ab1.jpg) no-repeat center/cover;
-        }
         
         
         /* 두번째 absolute */
@@ -290,17 +348,83 @@
             opacity: 1;
         }
 
+        /* 최하단요소를 fixed로 변경하기! */
+        .iamfixed{
+            position: fixed;
+            z-index: 99999;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        /* 고정 포스터 박스 */
+        .fixedposter{
+            position: fixed;
+            top: 250px;
+            right: -119px;
+            z-index: 9999;
+            /* 트랜지션: trs */
+            transition:0.5s;
+        }
+        /* 박스에 오버시 right값 변경으로 보이기 */
+        .fixedposter:hover{
+            right: 0;
+        }
+
+        /* 글자span */
+        .fixedposter span{
+            position: absolute;
+            top: 0;
+            left: -50px;
+            /* 부모는? .fixedPoster */
+            width: 50px;
+            height: 100%;
+            background-color: lightblue;
+            border-radius: 15px 0 0 15px;
+            /* 둥근모서리 : 왼쪽 위부터 시계방향셋팅가능 */
+
+            /* 글자세로모드 */
+            writing-mode: vertical-lr;
+            /* vertical-lr 세로방향 왼쪽에서 오른쪽으로 */
+            font-size: 25px;
+            text-align: center;
+            padding-left: 20px;
+            letter-spacing: 10px;
+        }
+        /* 포스터이미지 */
+        .fixedposter img{
+            height: 200px;
+            /* 하단간극없앰 */
+            vertical-align: middle;
+        }
+
     </style>
 </head>
 <body>
     <div class="bx" id="r1">r1</div>
     <div class="bx" id="s1">s1</div>
+    <div class="fxbx f1">
+        나는 젠틀 fixed다!
+    </div>
     <div class="bx" id="a1" title="나는 젠틀앱솔루트다!">a1</div>
-
     <div class="bx" id="r2">r2</div>
     <div class="bx" id="s2">s2</div>
-    <div class="bx" id="a2" 
-title="나는 보이는 화면이 기준이다! 부모가 없어서 ㅠ.ㅠ">a2</div>
+    
+    <!-- 화면고정 fixed 포지션 박스 -->
+    <div class="fxbx f2">
+        나는 fixed다! 부모는 화면이다!
+    </div>
+    
+    <!-- 포스터 고정박스 -->
+    <div class="fixedposter">
+        <img src="./images/ab0.jpg" alt="포스터">
+        <span>포스터보기</span>
+    </div>
+
+
+    <div class="bx" id="a2" title="나는 보이는 화면이 기준이다! 부모가 없어서 ㅠ.ㅠ">a2</div>
 
     <!-- 앱솔루트 : 판타롱스타킹! -->
     <div class="a5" title="앱솔루트 판타롱스타킹~!!">
@@ -312,6 +436,8 @@ title="나는 보이는 화면이 기준이다! 부모가 없어서 ㅠ.ㅠ">a2<
         <img src="./images/ab3.jpg" alt="토르">
         <img src="./images/ab4.jpg" alt="닥스">
     </div>
+
+  
 
 
 
@@ -325,8 +451,8 @@ title="나는 보이는 화면이 기준이다! 부모가 없어서 ㅠ.ㅠ">a2<
                     title="나는 젠틀앱솔루트다!">a3</div>
                     <div class="abs a4"
                     title="나는 부모찾아 올라간다!">a4</div>
-                    <span class="spabs" title="자동블록전환!!!">
-                        나는 span앱솔루트다!
+                    <span class="spabs iamfixed" title="갑분픽!!!">
+                        나는 span fixed다!
                     </span>
                 </div>           
             </div>
