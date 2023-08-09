@@ -45,7 +45,7 @@ body *{
 /* 1-3. 탑이동버튼 */
 /******************* 2. 메인영역 *******************/
 .main-aria{
-    overflow: hidden;
+    /* overflow: hidden; */
     /* 첫번째 자식요소 블록박스에 마진탑을 준 경우
     그 마진값은 부모요소 바깥쪽으로 나간다!(기본성질)
     마진탑을 포함하려면 부모요소에 overflow:hidden을
@@ -55,7 +55,7 @@ body *{
 /* 2-1. 로봇박스 */
 .box-robot{
     /* 패딩 : 위,양쪽,아래 */
-    padding: 200px 0 50px;
+    padding: 200px 0 520px;
     /* 마진탑 */
     margin-top: 30px;
 }
@@ -79,9 +79,11 @@ body *{
     height: 250px;
     margin: 0 auto; 
     /* 메탈배경 */
-    background: url(../images/metal01.jpg) no-repeat center/cover;
+    background: url(../images/luffy-face.png) no-repeat center/cover;
     /* 둥근모서리 */
     border-radius: 100px 100px 100px 100px;
+    /* .body보다 위 */
+    z-index: 99;
 }
 /* 가상요소로 머리에 가발씌우기 */
 .head::after{
@@ -96,6 +98,7 @@ body *{
     /* 부모는? .head */
     width: 358px;
     height: 181px;
+    z-index: 99;
     
     /* 배경 */
     background: url(../images/hair4.png) no-repeat 0/100% 100%;
@@ -112,13 +115,15 @@ body *{
     /* 부모는? .head */
     width: 294px;
     height: 181px;
+    z-index: 99;
     
     /* 배경 */
     background: url(../images/SnowLuffyHair.png) no-repeat 0/100% 100%;
 }
 
-/* 머리 하위요소 공통 */
-.head>div{
+/* 머리/몸통 하위요소 공통 */
+.head>div,
+.body>div{
     position: absolute;
     /* 모든 직계하위요소는 앱솔루트다! */
 }
@@ -127,12 +132,12 @@ body *{
 .eye{
     /* 앱솔루트 top값은 공통임 */
     top: 53px;
-    width: 63px;
-    height: 64px;
+    width: 70px;
+    height: 71px;
     /* 원형 */
     border-radius: 50%;
-    /* 이중선 보더 */0
-    border: 4px double #000;
+    /* 이중선 보더0
+    border: 4px double #000; */
 
     /* 배경공통 */
     background-repeat: no-repeat;
@@ -143,12 +148,12 @@ body *{
 /* 왼눈 */
 .eye1{
     left: 27px; /* l50 */
-    background-image: url(../images/luffy-eyes-LT.png);
+    background-image: url(../images/luffy-eyes-LT2.png);
 }
 /* 오른눈 */
 .eye2{
     right: 23px; /* r50 */
-    background-image: url(../images/luffy-eyes-RT.png);
+    background-image: url(../images/luffy-eyes-RT2.png);
 }
 
 /* 코 */
@@ -160,6 +165,7 @@ body *{
     left: 84px;
     border-radius: 80%;
     background-size: 107% 99%;
+    z-index: 99;
 }
 /* 입 */
 .mouth{
@@ -169,6 +175,7 @@ body *{
     top: 151px;
     left: 5px;
     background-size: 107% 99%;
+    z-index: 99;
 }
 /* 상처 */
 .luffy-x{
@@ -178,33 +185,214 @@ body *{
     top: 112px;
     left: 144px;
     background-size: 107% 99%;
+    z-index: 99;
 }
 /* 귀공통 */
 .ear{
     /* 위치 */
-    top: 100px;
+    top: 90px;
     /* 크기 */
-    width: 50px;
-    height: 80px;
-    /* 배경 */
-    background: url(../images/metal02.jpg) no-repeat center/cover;
+    width: 38px;
+    height: 68px;
+    /* 배경
+    background: url(../images/luffy-face.png) no-repeat center/cover; */
 }
 /* 왼쪽귀 */
 .ear1{
     /* 개별위치 왼쪽바깥 */
-    left: -50px;
+    left: -34px;
     /* 둥근모서리 : 왼위 왼쪽아래 */
     border-radius: 20px 0 0 20px;
+    /* 배경 */
+    background: url(../images/luffy-ear-LT2.png) no-repeat center/cover;
 }
 /* 오른귀 */
 .ear2{
     /* 개별위치 오른쪽바깥 */
-    right: -50px;
+    right: -32px;
     /* 둥근모서리 : 오른쪽위 오른쪽아래 */
     border-radius: 0 20px 20px 0;
+    /* 배경 */
+    background: url(../images/luffy-ear-RT2.png) no-repeat center/cover;
 }
 
 /* 2-1-2. 몸통 */
+.body{
+    position: relative;
+    /* 부모자격 - 하위직계자식 div앱솔루트 */
+    width: 220px;
+    height: 400px;
+    /* 무대중앙 - 마영오 */
+    margin: 0 auto;
+    margin-top: 50px;
+    /* 배경이미지 사이즈 조정하기 
+    - 가로크기 80%, 세로크기 auto(생략가능) */
+    background-size: 80%;
+}
+/* 몸통의 가상요소로 상체만들기 */
+.body::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: -4px;
+    left: -5px;
+    width: 225px;
+    height: 204px;
+    background-image: linear-gradient(to top, #f3966b, #ff7839);
+    border-radius: 20px 20px 20px 20px;
+}
+/* 몸통의 가상요소로 하체만들기 */
+.body::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 268px;
+    width: 220px;
+    height: 133px;
+    background-image: linear-gradient(to top, #79e0ff, #3983ff);
+    border-radius: 20px 20px 20px 20px;
+}
+
+/* 목  */
+.neck{
+    top: -70px;
+    left: calc(50% - 50px/2);
+    /* 중앙보내기 원리
+    부모박스의 50% 보내고
+    자신크기의 절반 빼기 
+    자신크기의 left는 width
+    top은 height 이다!*/
+    width: 50px;
+    height: 80px;
+    border-radius: 20px;
+    background-image: url(../images/luffy-neck2.png);
+}
+/* 팔공통 */
+.arm{
+    width: 50px;
+    height: 200px;
+    border-radius: 20%;
+}
+/* 팔하단부분 공통 */
+.arm span{
+    position: absolute;
+    top: 100%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    /* 부모는? .arm */
+    border-radius: 20%;
+}
+/* 가상요소로 손만들기 */
+.arm span::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: calc(50% - 50px/2);
+    width: 50px;
+    height: 70px;
+    /* 배경이미지 */
+    background: url(../images/hand_left.png) no-repeat 0/100%;
+
+    /* outline: 2px dashed lime; */
+}
+/* 왼손손 가상요소 변경 */
+.arm1 span::after{
+    background: url(../images/hand_left.png) no-repeat 0/100%;
+    margin-left: 4px;
+}
+/* 오른손 가상요소 변경 */
+.arm2 span::after{
+    background: url(../images/hand_right.png) no-repeat 0/100%;
+    margin-left: -4px;
+}
+/* 왼팔  */
+.arm1{
+    left: -63px;
+}
+/* 오른팔  */
+.arm2{
+    right: -63px;
+}
+/* 다리공통 */
+.leg{
+    top: 100%;
+    /* 부모박스 높이만큼 나감!
+    아랫쪽 바깥에 위치! */
+    width: 80px;
+    height: 250px;
+    border-radius: 20%;
+}
+/* 다리 하단부분 공통 */
+.leg span{
+    position: absolute;
+    top: 100%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    border-radius: 20%;
+}
+/* 가상요소로 부츠 만들기 */
+.leg span::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 40%;
+    left: -4px;
+    width: 110%;
+    height: 70%;
+    background-image: linear-gradient(to right,#ccc,#f04242);
+    border-top: 5px solid #0a0a0a;
+}
+/* 가상요소로 신발 만들기 */
+.leg span::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: -22%;
+    width: 140%;
+    height: 50px;
+    background-image: linear-gradient(to right,#ccc,#fc6132);
+    border: 2px solid #000;
+    border-bottom: 10px solid #050505;
+    border-radius: 40px 40px 0 0;
+    /* 보더까지 포함하는 박스 */
+    box-sizing: border-box;
+}
+/* 왼다리  */
+.leg1{
+    left: 10px;
+}
+/* 오른다리 */
+.leg2{
+    right: 10px;
+}
+/* 어깨공통 */
+.shdr{
+    top: -15px;
+    width: 80px;
+    height: 80px;
+}
+/* 왼어깨  */
+.shdr1{
+    left: -75px;
+    border-radius: 50% 0 0 50%;
+    /* 
+        [ 둥근모서리 값설정 ]
+        1. 1개 - 네방향
+        2. 2개 - 왼위 오른아래 / 오른위 왼아래
+        3. 3개 - 왼위 / 오른위 왼아래 / 오른아래
+        4. 4개 - 왼위 / 오른위 / 오른아래 / 왼아래
+    */
+}
+/* 오른어깨 */
+.shdr2{
+    right: -75px;
+    border-radius: 0 50% 50% 0;
+}
+/* tV  */
 .
 /* 2-2. 로봇설명박스 */
 /******************* 3. 하단영역 *******************/
