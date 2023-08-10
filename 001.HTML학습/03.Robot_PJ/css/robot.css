@@ -93,11 +93,11 @@ body *{
     /* 마치 div를 넣은 것 같다~! */
     position: absolute;
     /* 앱솔루트요소 */
-    top: -88px;
-    left: -78px;
+    top: -111px;
+    left: -70px;
     /* 부모는? .head */
     width: 358px;
-    height: 181px;
+    height: 363px;
     z-index: 99;
     
     /* 배경 */
