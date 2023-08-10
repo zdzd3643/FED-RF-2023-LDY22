@@ -132,8 +132,8 @@ body *{
 .eye{
     /* 앱솔루트 top값은 공통임 */
     top: 53px;
-    width: 70px;
-    height: 71px;
+    width: 84px;
+    height: 68px;
     /* 원형 */
     border-radius: 50%;
     /* 이중선 보더0
@@ -147,12 +147,12 @@ body *{
 }
 /* 왼눈 */
 .eye1{
-    left: 27px; /* l50 */
+    left: 19px; /* l50 */
     background-image: url(../images/luffy-eyes-LT2.png);
 }
 /* 오른눈 */
 .eye2{
-    right: 23px; /* r50 */
+    right: 16px; /* r50 */
     background-image: url(../images/luffy-eyes-RT2.png);
 }
 
@@ -160,9 +160,9 @@ body *{
 .nose{
     width: 50px;
     height: 80px;
-    background: url(../images/nose.jpg) no-repeat 0px 0px/147%;
-    top: 104px;
-    left: 84px;
+    background: url(../images/luffy-nose.png) no-repeat 0px 0px/147%;
+    top: 98px;
+    left: 79px;
     border-radius: 80%;
     background-size: 107% 99%;
     z-index: 99;
