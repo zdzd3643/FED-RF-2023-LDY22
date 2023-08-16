@@ -272,6 +272,7 @@ body:hover .logo{
     background-image: 
     linear-gradient(to top, #f3966b, #ff7839);
     border-radius: 30px;
+    clip-path: polygon(6% 25%,15% 3%,87% 0%,95% 25%,90% 74%,58% 95%,41% 95%,10% 75%);
 }
 /* 몸통의 가상요소로 하체만들기 */
 .body::after{
@@ -285,6 +286,7 @@ body:hover .logo{
     background-image: 
     linear-gradient(to top, #79e0ff, #3983ff);
     border-radius: 30px;
+    clip-path:polygon(6% 25%,15% 3%,87% 0%,95% 25%,90% 94%,77% 116%,54% 110%,10% 100%);
 }
 
 
