@@ -25,9 +25,9 @@ body{
 }
 
 /* 공사중표시 */
-body *{
-    /* outline: 2px dashed red; */
-}
+/* body *{
+    outline: 2px dashed red;
+} */
 
 /* 공통 클래스 */
 
@@ -47,15 +47,13 @@ body *{
     /* 픽스드 포지션 */
     position: fixed;
     /* 화면정중앙이동! calc()로! */
-    top: calc(50% - 200px/2);
-    left: calc(50% - 200px/2);
+    top: calc(50% - 20vw/2);
+    left: calc(50% - 20vw/2);
+    width: 20vw;
+    height: 20vw;
 
-    width: 200px;
-    height: 200px;
-
-    /* 배경 이미지 */
-    background: #fff url(../images/해적단로고.png) no-repeat center/160px;
-
+    /* 배경이미지 */
+    background: #fff url(../images/해적단로고.png) no-repeat center/67%;
     border-radius: 50%;
     border: 2px solid #ccc;
 
@@ -64,7 +62,7 @@ body *{
     /* line-height: 200px; */
     color: aqua;
     /* font: 스두크/줄체 */
-    font: 45px/200px 'Orbitron';
+    font: 4vw/20vw 'Orbitron';
     /* 글자그림자 */
     text-shadow: 2px 2px 5px #000;
 
@@ -81,15 +79,19 @@ body *{
     z-index: 99;
     /* 가장위! */
 }
-body:hover .logo{
+/* body:hover .logo{
     top: 10px;
     left: 10px;
     transform: scale(1);
-}
+} */
 /* 1-2. 링크타이틀 */
 /* 1-3. 탑이동버튼 */
 /******************* 2. 메인영역 *******************/
 .main-aria{
+    padding-top: 860px;
+    /* 자식요소인 .box-robot이 fixed포지션이
+    됨에 따라 상단부분이 없어졌으므로
+    패딩으로 로봇영역을 채워준다! */
     /* overflow: hidden; */
     /* 첫번째 자식요소 블록박스에 마진탑을 준 경우
     그 마진값은 부모요소 바깥쪽으로 나간다!(기본성질)
@@ -99,13 +101,18 @@ body:hover .logo{
 }
 /* 2-1. 로봇박스 */
 .box-robot{
-    /* 패딩 : 위,양쪽,아래 */
     position: fixed;
+    /* top값을 아주면 젠틀픽스드 이므로
+    패딩/static요소를 존중하므로
+    위치값을 줘서 화면을 기준한다! */
+    top: 0;
     width: 100%;
+    /* 패딩 : 위,양쪽,아래 */
     padding: 200px 0 520px;
-    transform: translate(30%, 11%) scale(0.3);
     /* 마진탑 */
     /* margin-top: 30px; */
+    /* 처음에 트랜스폼 변경설정 */
+    transform: translate(30%, 11%) scale(0.3);
 }
 /* 2-1-1. 머리 */
 
@@ -272,6 +279,8 @@ body:hover .logo{
     background-image: 
     linear-gradient(to top, #f3966b, #ff7839);
     border-radius: 30px;
+
+    /* 클립패스 : 부분만 보이기 */
     clip-path: polygon(6% 25%,15% 3%,87% 0%,95% 25%,90% 74%,58% 95%,41% 95%,10% 75%);
 }
 /* 몸통의 가상요소로 하체만들기 */
@@ -286,7 +295,9 @@ body:hover .logo{
     background-image: 
     linear-gradient(to top, #79e0ff, #3983ff);
     border-radius: 30px;
-    clip-path:polygon(6% 25%,15% 3%,87% 0%,95% 25%,90% 94%,77% 116%,54% 110%,10% 100%);
+
+    /* 클립패스 : 부분만 보이기 */
+    clip-path: polygon(6% 25%,15% 3%,87% 0%,95% 25%,90% 94%,77% 116%,54% 110%,10% 100%);
 }
 
 
@@ -428,7 +439,7 @@ body:hover .logo{
     border-radius: 30%;
     background-image: 
     linear-gradient(to right,#ccc,#f04242)
-     box-shadow: inset 0 0 5px #000;
+    box-shadow: inset 0 0 5px #000;
     z-index: 1;
 }
 /* 다리 하단부분 공통 */
@@ -475,8 +486,8 @@ body:hover .logo{
 /* 왼다리 */
 .leg1{
     left: 10px;
-    transform-origin: top;
-    transform: scaleY(1);
+    /* transform-origin: top;
+    transform: scaleY(1); */
 }
 /* 오른다리 */
 .leg2{
@@ -511,7 +522,7 @@ body:hover .logo{
     left: 50%;
     /* left방향 중앙이동 */
     transform: translateX(-50%);
-    z-index: 3;
+    z-index: 10;
     width: 180px;
     height: 125px;
 
@@ -524,6 +535,8 @@ body:hover .logo{
     url(../images/tv.jpg) no-repeat 0/100%;
 
     /* 트랜지션: 속시이지 */
+    transition: 1.2s ease-in-out;
+
 }
 
 /* TV가 커지는 클래스 */
@@ -555,7 +568,7 @@ body:hover .logo{
     /* 부모는? .screen */
 
     /* 아이프레임 기본보더 없앰 */
-    boder: none;
+    border: none;
 }
 
 /* 동영상 선택버튼박스 */
@@ -570,5 +583,30 @@ body:hover .logo{
     width: 100%;
 }
 /* 2-2. 로봇설명박스 */
+.box-text{
+    /* 최대크기800px */
+    max-width: 800px;
+    /* 박스중앙 : 마영오 */
+    margin: 0 auto;
+    /* 하단마진 200px */
+    margin-bottom: 200px;
+    /* 반투명 검정배경 */
+    background-color: rgba(0 0 0 / 0.5);
+    /* 글자색 흰색 */
+    color: #fff;
+    /* 글자그림자 */
+    text-shadow: 1px 1px 1px #000;
+    /* 패딩 : 15px 30px */
+    padding: 15px 30px;
+    /* 경계선 : 3px solid #fff */
+    border: 3px solid #fff;
+    /* 둥근모서리 : 20px */
+    border-radius: 20px;
+    /* 박스그림자를 이용한 글로우효과 : 내부만 2개주기 */
+    box-shadow: 
+    inset 0 0 20px blue,
+    inset 0 0 50px 10px cyan;
+
+}
 /******************* 3. 하단영역 *******************/
 /* 3-1. 회사정보 */
