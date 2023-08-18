@@ -15,6 +15,9 @@
 html{
     font-size: 10px;
     /* 상대단위 rem 계산 편의를 위해 변경! */
+
+    /* 최상위요소인 html에 부드러운 스크롤적용 */
+    scroll-behavior: smooth;
 }
 
 /* 초기화 */
@@ -52,10 +55,10 @@ body{
     /* 픽스드 포지션 */
     position: fixed;
     /* 화면정중앙이동! calc()로! */
-    top: calc(50% - 20vw/2);
-    left: calc(50% - 20vw/2);
-    width: 20vw;
-    height: 20vw;
+    top: calc(50% - 10vw/2);
+    left: calc(50% - 10vw/2);
+    width: 10vw;
+    height: 10vw;
 
     /* 배경이미지 */
     background: #fff url(../images/해적단로고.png) no-repeat center/67%;
@@ -67,7 +70,7 @@ body{
     /* line-height: 200px; */
     color: aqua;
     /* font: 스두크/줄체 */
-    font: 4vw/20vw 'Orbitron';
+    font: 2.5vw/10vw 'Orbitron';
     /* 글자그림자 */
     text-shadow: 2px 2px 5px #000;
 
@@ -89,8 +92,45 @@ body{
     left: 10px;
     transform: scale(1);
 } */
-/* 1-2. 링크타이틀 */
-/* 1-3. 탑이동버튼 */
+/* 1-2. 탑이동버튼 */
+.btn-top{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 5px outset #fff;
+    background-color: #ccc;
+
+    /* 위치상위 */
+    z-index: 10;
+}
+/* 버튼 a요소 */
+.btn-top a{
+    display: block;
+    /* 디자인확장! */
+    width: 100%;
+    height: 100%;
+
+    /* 글자셋팅 */
+    color: blue;
+    font: 30px/90px 'Black Ops One';
+    /* 줄간격은 높이값 100px - 보더 10px = 90px */
+    text-decoration: none;
+}
+/* 버튼 마우스 오버시 */
+.btn-top:hover{
+    background-color: yellow;
+    border-style: inset;
+}
+/* 버튼 오버시 글자색 */
+.btn-top:hover a{
+    color: red;
+
+}
+
 /******************* 2. 메인영역 *******************/
 .main-aria{
     padding-top: 860px;
@@ -591,9 +631,87 @@ body{
 .box-btn button{
     width: 100%;
 }
+
+
+
+/* 2-1-3.링크타이틀 : 말풍선모양 */
+.link-title{
+    position: absolute;
+    top: 7vh;
+    right: -6vw;
+    color: orangered;
+    font-size: 3vw;
+    background-color: #fff;
+    padding: 5vw 3vw;
+    border-radius: 50%;
+    border: 1vw dashed orangered;
+    text-decoration: none;
+    
+    /* 처음에 안보임 */
+    transform: scale(0);
+    /* 트랜스폼 축변경 : 가로 세로 */
+    transform-origin: left bottom;
+}
+
+/* 가상요소로 삼각형 만들기 */
+.link-title::after{
+    content: '';
+    position: absolute;
+    bottom: -4.8vw;
+    left: -2.7vw;
+    transform: rotate(43deg);
+    
+    /* 삼각형만들기 필수
+    - 양쪽방향 보더를 투명으로 한쪽방향 보더에 색
+    - 가로, 세로값 0 */
+    width: 0;
+    height: 0;
+    border-left: 1.3vw solid transparent;
+    border-right: 1.3vw solid transparent;
+    border-top: 10vw solid red;
+}
+/* 마우스 오버시 배경색 변경 */
+.link-title:hover {
+    background-image: 
+    radial-gradient(rgb(56, 182, 255),rgb(116, 100, 255));
+    color: #fff;
+}   
+
+/* 
+[ 2. 원형 그라데이션 ]
+
+- 기본형, 영역지정형은 박스모양을 따라감!
+
+1) 기본형: 중앙중심, 모양은 박스크기에 맞춤
+background-image: 
+radial-gradient(색1,색2,색3,...);
+- 시작색으로부터 중앙에서 시작됨
+
+2) 영역 지정형:
+background-image: 
+radial-gradient(색1 몇%,색2 몇%,색3 몇%,...);
+- 색 뒤에 한칸 띄고 %수치로 영역지정함
+
+3) 그라데이션 모양을 원형으로 사용할 경우:
+background-image: 
+radial-gradient(circle,색1,색2,색3,...);
+    - circle 키워드를 첫번째에 사용함
+
+    4) 영역옵션 지정형: 중심점 변경
+    background-image: 
+    radial-gradient(옵션 at 가로위치 세로위치,색1,색2,색3,...);
+    - 옵션4가지 : closest-side / farthest-side
+    closest-corner / farthest-corner
+    ___________________________________
+    - closest는 중심점으로 좀더 모아진것
+    - farthest는 중심점에서 멀리 퍼진것
+    - side와 corner는 경계선과 끝부분옵션임
+    - 가로위치, 세로위치 (중심점) - 단위는 px / % 
+    */
+
 /* 2-2. 로봇설명박스 */
 .box-text{
-    /* 로봇보다 위 - 포지션 있어야 위에옴 */
+        /* 로봇보다 위 - 포지션 있어야 위에옴 */
     position: relative;
     /* 최대크기800px */
     max-width: 800px;
@@ -618,7 +736,7 @@ body{
     inset 0 0 20px blue,
     inset 0 0 50px 10px cyan;
     /* 박스그림자: x y blur spread color */
-
+    
 }
 
 /* 2-2-1.제목 */
@@ -702,3 +820,36 @@ body{
 
 /******************* 3. 하단영역 *******************/
 /* 3-1. 회사정보 */
+#bottom-aria{
+    /* 순서가 위에 오도록! */
+    position: relative;
+    /* 글자색 흰색 */
+    color: #fff;
+    /* 글자크기 30px, 글자체 'Black Ops One' */
+    font: 3rem 'Black Ops One';
+    /* 글자그림자 2px 2px 2px #000 */
+    text-shadow: 2px 2px 2px #000;
+    /* 배경색 : 검정색 반투명 0.5 */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* 글자중앙정렬 */
+    text-align: center;
+    /* 패딩 7vmin -> 가로/세로중 작은것 기준 10% */
+    padding: 7vmin;
+}
+/* 속박스 가상요소로 아이콘 모양 넣기 */
+.bottom-aria::before{
+    content: '';
+    /* 디자인도 적용, 한줄에 오도록! */
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    background: white url(../images/해적단로고.png)
+    no-repeat;
+    background-position: 0px 0px;
+    background-size: 30px;
+
+    /* 인라인요소간 세로정렬 */
+    vertical-align: -5px;
+}
