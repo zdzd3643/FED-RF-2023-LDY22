@@ -4,11 +4,9 @@
 /* 공유기능 요소 셋팅 */
 
 /************* 1. 상단영역 *************/
-#header {
-    background-color: lightblue;
-}
 .header .partbox {
     height: 120px;
+    background-color: lightblue;
 }
 
 /************* 2. 메인영역 : .group-part *************/
@@ -17,9 +15,7 @@
     min-height: 800px;
 }
 /************* 3. 하단영역 *************/
-#footer {
-    background-color: lightskyblue;
-}
 .footer .partbox {
     height: 100px;
+    background-color: lightcoral;
 }

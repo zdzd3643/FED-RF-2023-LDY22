@@ -21,55 +21,44 @@ body > div > * {
         파트박스가 늘어날 경우 높이값에 제한을 받게됨!
         확장형은 반드시 파트박스에 높이값을 설정한다! */
 
-/************* 2. 로고배너파트 *************/
-#lgbanner {
-    background-color: lightgreen;
-    font-size: 3rem;
-}
-.lgbanner .partbox {
-    height: 250px;
+
+/************* 2. 메인영역 : .group-part *************/
+.header,main,footer{
+    font-size: 2rem;
 }
 
-/************* 3. 이벤트배너파트 *************/
-#evbanner {
-    background-color: lightsalmon;
-    font-size: 3rem;
-}
-.evbanner .partbox {
-    height: 350px;
-}
-
-/************* 4. 행사배너파트 *************/
-#slbanner {
-    background-color: lightyellow;
-    font-size: 3rem;
-}
-.slbanner .partbox {
-    height: 350px;
-}
-
-/************* 3. 메인영역 : .group-part *************/
+/************* 2. 메인영역 : .group-part *************/
 #main {
     /* 본문영역 최소높이 셋팅! */
     min-height: 800px;
 }
-/* 방송편성소개파트 */
+/* 2-1. 로고 배너영역 */
 .main .group-part-01 .partbox {
-    height: 455px;
+    height: 300px;
+    background-color: lightgreen;
 }
-/* 미리보기파트 */
+/* 2-2. 이벤트 배너영역 */
 .main .group-part-02 .partbox {
-    height: 298px;
+    height: 350px;
+    background-color: lightsalmon;
 }
-/* 현장포토파트 */
+/* 2-3. 행사 배너영역 */
 .main .group-part-03 .partbox {
     height: 300px;
+    background-color: lightseagreen;
 }
-/* 대표이미지파트 */
+/* 2-4. 상품 검색영역 */
 .main .group-part-04 .partbox {
-    height: 542px;
+    height: 250px;
+    background-color: lightpink;
 }
-/* 최신동영상파트 */
+/* 2-5. 소셜영역 */
 .main .group-part-05 .partbox {
-    height: 376px;
+    height: 350px;
+    background-color: lightgoldenrodyellow;
+}
+/* 2-6. 고객센터영역 */
+.main .group-part-06 .partbox {
+    height: 350px;
+    background-color: lightcyan;
 }
