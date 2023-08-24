@@ -24,6 +24,7 @@ body > div > * {
 /************* 2. 캐릭터소개 *************/
 #banner {
     background-color: lightgreen;
+    font-size: 2rem;
 }
 .banner .partbox {
     height: 530px;
@@ -33,6 +34,7 @@ body > div > * {
 #main {
     /* 본문영역 최소높이 셋팅! */
     min-height: 800px;
+    background-color: lightgoldenrodyellow;
 }
 /* 방송편성소개파트 */
 .main .group-part-01 .partbox {

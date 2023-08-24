@@ -10,15 +10,21 @@
 .header .partbox {
     height: 120px;
 }
-
+/* 1-1. 로고박스 */
+.header__logo img{
+    margin-top: 40px;
+    width: 126px;
+}
 /************* 2. 메인영역 : .group-part *************/
 #main {
     /* 본문영역 최소높이 셋팅! */
     min-height: 800px;
+    font-size: 2rem;
 }
 /************* 3. 하단영역 *************/
 #footer {
     background-color: lightskyblue;
+    font-size: 2rem;
 }
 .footer .partbox {
     height: 100px;
