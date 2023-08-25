@@ -138,7 +138,7 @@
                 // 전역변수를 재선언 할당 한것임!
                 //  var는 중괄호를 기준하지 않는다!
 
-                console.log('jeju:',jeju);
+                // console.log('jeju:',jeju);
                 // 아래쪽에 let jeju를 선언한 순간 에러발생!!!
                 // -> 에러메시지:
                 // cannot access 'jeju' before initialization
@@ -282,7 +282,17 @@
             // ->>>>>>>> var는 오직 함수의 중괄호에서만 선언시 지역변수가 된다!!!
             
             // [1. 배열 ] //////////////////
-            
+            const arr = ["상추", "고기", "마늘"];
+            console.log("배열 arr값:", arr);
+
+            // 재할당 시도시 에러남! 재할당 불가!!!
+            // arr = "닭고기";
+
+            // 배열값 추가
+            arr.push("닭고기");
+            console.log("배열 arr값:", arr);
+
+            // 배열값은 변경가능 그러나 새로운 데이터할당 불가!
 
             // [2. 객체]
             
