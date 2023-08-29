@@ -1,5 +1,31 @@
 // 영화 초이스 객체 /////// object.js
 
+// 동엽 초이스!
+const nicks_obj = {};
+// 오브젝트 형만 만들고 객체내용은 아래에서!
+
+// 1. 영화제목
+nicks_obj.title = '공조2:인터내셔날';
+
+// 2. 감독
+nicks_obj.director = '이석훈';
+
+// 3. 배우
+nicks_obj.actor = '현빈, 유해진, 윤아, 다니엘 헨리, 진선규';
+
+// 4. 장르
+nicks_obj.genre = '액션,코미디';
+
+// 5. 관람가
+nicks_obj.ratings = '15세';
+
+// 6. 예고편
+nicks_obj.trailer = function(){
+    console.log('예고편:','fzUKUfHeIYA');
+    // 플레이어함수 호출!
+    playMovie('fzUKUfHeIYA');
+}; ///////////// trailer 함수 ///////////////
+
 // 박석호 초이스!
 const tom_obj = {};
 // 오브젝트 형만 만들고 객체내용은 아래에서!
