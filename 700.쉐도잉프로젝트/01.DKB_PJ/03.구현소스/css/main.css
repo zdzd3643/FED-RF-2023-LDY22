@@ -25,23 +25,90 @@ body > div > * {
 #banner {
     background: url(../images/bg_mainvisual2.jpg) no-repeat center/auto 100%;
 }
-.banner .partbox {
-    height: 530px;
+/* 캐릭터 파트박스 */
+.cat-area{
+    position: relative;
+    /* 부모자격 */
+    aspect-ratio: 2/1;
+    /* 파트박스에 비율만들기
+    -> height값을 절대 주지말것! */
+}
+.cat-box{
+    position: absolute;
+    bottom: 5%;
+    /* 플렉스 박스 */
+    display: flex;
+    flex-wrap: wrap;
+    /* 진행방향 정렬 */
+    justify-content: center;
+    
+    width: 100%;
+    margin: 0 auto; 
+}
+/* 개별캐릭터 박스 */
+.cat-box article{
+    position: relative;
+    width: calc(95%/4);
+    /* r개별박스 비율설정 : height 설정안함! */
+    aspect-ratio: 2/1.2;
+    outline: 2px dashed blue;
+}
+/* 개별캐릭터 컨텐츠박스 */
+.cat-content{
+    position: absolute;
+    top: -100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 200%;
+}
+.cat-content .part{
+    flex: 1;
+    /* 등분할 */
+}
+/* 이미지박스 - 캐릭터 이미지*/
+.img-box>img{
+    width: 100%;
+}
+/* 이미지설명박스 */
+.img-box figcaption{
+    text-align: center;
+    margin-top: -20%;
+    /* 싸고있는 박스 높이를 기준한 %로 마진을 설정함
+    동적인 크기변경시 마진도 변경되어야 위치가 일정함 */
+}
+/* 이미지설명박스 - 캐릭터이름 이미지 */
+.img-box figcaption img{
+    display: none;
+}
+/* 마지막 이미지(진한글자) 숨기기 */
+.img-box figcaption img:last-child{
+    display: none;
+}
+/* 개별박스 오버시 진한글자보이기 */
+.cat-box article:hover 
+.img-box figcaption img:last-child{
+    display: inline;
+}
+/* 개별박스 오버시 흐린글자 숨기기 */
+.cat-box article:hover
+.img-box figcaption img:first-child{
+    display: none;
 }
 
 /******************** 3. 도깨비메뉴박스 ********************/
 #dokebi-menu {
     /* 스티키 포지션 - 상단스크롤 걸림! */
-    position: sticky;
-    top: 0;
-    background-color: #fff;
+position: sticky;
+top: 0;
+background-color: #fff;
 }
 /* 1-2-3. 도깨비메뉴 */
 .dokebi-menu ul{
     /* 플렉스박스 */
     display: flex;
     padding: 12px 0;
-
+    
 }
 /* 도깨비메뉴 상위메뉴a */
 .dokebi-menu ul>li>a{
@@ -77,7 +144,7 @@ body > div > * {
     border-radius: 30px;
     width: 180px;
     background-color: #fff;
-
+    
     /* 처음에 숨김 */
     display: none;
 }

@@ -21,7 +21,7 @@
         /* 공통 레이아웃 클래스 */
         /* 속박스 */
         .inbox{
-            max-width: 2000px;
+            max-width: 1200px;
             margin: 0 auto;
         }
         /* 클리어 설정 가상요소 */
@@ -34,7 +34,7 @@
         /* 파티션박스 */
         .partbox{
             /* 옆으로 흐르게 */
-            float: left;
+            /* float: left; */
             /* 보더 패딩 포함박스 */
             box-sizing: border-box;
             /* 내부패딩 */
@@ -140,10 +140,10 @@
             .col2-11 {width: 91.66%;}
             .col2-12 {width: 100%;}
 
-        /* 숨길박스 */
-        .col-none{display: none;}
-        /* 보일 박스 */
-        .col-block{display: block;}
+            /* 숨길박스 */
+            .col-none{display: none;}
+            /* 보일 박스 */
+            .col-block{display: block;}
 
         }
         /* 최대 800px 이하 종료 */
@@ -155,13 +155,15 @@
                 CSS 선택자 문법 : 속성선택자
                 [속성명=값] -> 어떤속성값이 정확히 일치
                 [속성명^=값] -> 어떤속성값이 어떤값으로 시작
-                [속성명$=값] => 
-                [속성명]
+                [속성명$=값] -> 어떤속성값이 어떤값으로 끝남
+                [속성명*=값] -> 어떤속성값이 어떤값에 포함됨
             */
 
             /* [class^='f1']{ */
-            /* [class^='f1']{ */
-
+            /* [class$='-9']{ */
+                [class='col-']{
+                    width: 100%;
+                }
         }
         /* 최대 500px 이하 종료 */
         
@@ -173,9 +175,11 @@
     <div id="header">
         <header class ="header inbox">
             <!-- 파트박스 3개 -->
-            <div class="partbox col-2 col2-3"></div>
-            <div class="partbox col-7 col2-9"></div>
-            <div class="partbox col-3 col2-12"></div>
+            <div class="flex-box">
+                <div class="partbox col-2 col2-3"></div>
+                <div class="partbox col-7 col2-9"></div>
+                <div class="partbox col-3 col2-12"></div>
+            </div>
         </header>
     </div>
     <!-- 2. 배너영역 -->
@@ -183,9 +187,11 @@
         <section class="banner inbox">
             <h2>메인배너</h2>
             <!-- 파트박스 2개 -->
-            <div class="partbox col-9 col2-6"></div>
-            <div class="partbox col-none col2-block"></div>
-            <div class="partbox col-3 col2-6"></div>
+            <div class="flex-box">
+                <div class="partbox col-9 col2-6"></div>
+                <div class="partbox col-none col2-block"></div>
+                <div class="partbox col-3 col2-6"></div>
+            </div>
         </section>
     </div>
     <!-- 3. 메인영역 -->
@@ -193,7 +199,7 @@
         <main class="main inbox">            
             <!-- 파트그룹박스 5개 -->
             <div class="group-part group-part-01">
-                <h2>연구보고서</h2>    
+                <h2>배너바로가기</h2>    
                 <!-- 파트박스 4개 -->
                 <div class="flex-box">
                     <div class="partbox col-3 col2-6"></div>
@@ -201,8 +207,9 @@
                     <div class="partbox col-3 col2-6"></div>
                     <div class="partbox col-3 col2-6"></div>
                 </div>
+            </div>    
             <div class="group-part group-part-02">
-                <h2>바로가기링크</h2>
+                <h2>바로가기링크영역</h2>
                 <!-- 파트박스 1개 -->
                 <div class="partbox col-12"></div>
             </div>
@@ -219,6 +226,7 @@
                         <div class="partbox col-3 col2-6"></div>
                         <div class="partbox col-3 col2-6"></div>
                 </div>
+            </div>    
             <div class="group-part group-part-04">
                 <h2>유관기관링크모음</h2>
                 <!-- 파트박스 6개 -->
@@ -230,6 +238,7 @@
                     <div class="partbox col-2"></div>
                     <div class="partbox col-2"></div>       
                 </div>
+            </div>      
             <div class="group-part group-part-05">
                 <h2>마케팅통계보기</h2>
                 <!-- 파트박스 4개 -->
