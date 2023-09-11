@@ -567,6 +567,7 @@ body{
 }
 /* TV */
 .tv{
+    position: relative;
     top: 8%;
     left: 50%;
     /* left방향 중앙이동 */
@@ -599,7 +600,7 @@ body{
     top: 8px;
     left: 9px;
     /* 부모는? .tv */
-    width: 128px;
+    width: 138px;
     height: 99px;
     border-radius: 15px;
     background-color: #222;
