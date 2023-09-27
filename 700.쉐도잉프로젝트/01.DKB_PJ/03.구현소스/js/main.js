@@ -6,7 +6,7 @@ import dFn from "./dom.js";
 // 부드러운 스크롤 모듈
 import { startSS, setPos } from "./smoothScroll23.js";
 // 데이터모듈
-import { gridData, gnbData, previewData,clipData } from "./data_drama.js";
+import { gridData, gnbData, previewData, clipData } from "./data_drama.js";
 
 // 부드러운 스크롤 적용 /////////////////
 startSS();
@@ -18,14 +18,14 @@ setTimeout(() => {
     // 부드러운 스크롤 위치값 반영!
     setPos(0);
     // 안하면 원래 위치로 스크롤시 튐!
-  }, 400);
-  // 0. 스크롤바 트랙을 잡고 위치이동시 위치값 반영
-  dFn.addEvt(window, "mouseup", () => setPos(window.scrollY));
-  //////// mouseup /////////////
-  
-  // 0. 키보드 방향키 이동시 위치값 반영
-  dFn.addEvt(window, "keyup", () => setPos(window.scrollY));
-  //////// mouseup /////////////
+}, 400);
+// 0. 스크롤바 트랙을 잡고 위치이동시 위치값 반영
+dFn.addEvt(window, "mouseup", () => setPos(window.scrollY));
+//////// mouseup /////////////
+
+// 0. 키보드 방향키 이동시 위치값 반영
+dFn.addEvt(window, "keyup", () => setPos(window.scrollY));
+//////// mouseup /////////////
 
 // 부드러운 스크롤 때문에 마우스휠 이벤트 막기가 작동되어
 // 캐릭터 설명박스 작은 스크롤도 작동안됨!
@@ -68,12 +68,11 @@ function makeGrid(ele, idx) {
         // html변수에 계속 넣기
         // 폴더경로는 idx가 0이면'live_photo'
         // 1이면'poster_img'로 셋팅함!
-        hcode += `
-                    <li>
-                        <figure>
-                            <img src="images/${
-                                idx ? "poster_img" : "live_photo"
-                            }/${val.imgName}.jpg" alt="${val.title}">
+        hcode += ` <li>
+                <figure>
+                    <img src="images/${idx ? "poster_img" : "live_photo"}/${
+            val.imgName
+        }.jpg" alt="${val.title}">
                             <figcaption>${val.title}</figcaption>
                         </figure>
                     </li>
@@ -180,14 +179,14 @@ function outFn() {
 const mvBox = dFn.qs(".intro-mv-img");
 
 // 2. 이벤트 설정하기
-dFn.addEvt(mvBox,"click",showMv);
+dFn.addEvt(mvBox, "click", showMv);
 
 // 이벤트연결 상태변수
 let stsShowMv = 0;
 
 // 3. 함수만들기
 function showMv() {
-    if (stsShowMv) return;
+    if (stsShowMv) return; // 돌아가!
     stsShowMv = 1; // 한번만 실행
 
     // console.log("보여줘!");
@@ -205,8 +204,7 @@ function showMv() {
 // 오름차순 데이터를 내림차순으로 변경하여 화면에 뿌리기!
 
 // 1. 데이터 정렬 변경하기
-let preNewData = 
-previewData.sort((x, y) => {
+let preNewData = previewData.sort((x, y) => {
     // x,y는 배열값 앞뒤를 계속 가지고 들어옴
     // 배열값 중 idx속성값을 가져와서 숫자형 변환 후 사용
     let a = Number(x.idx);
@@ -214,7 +212,7 @@ previewData.sort((x, y) => {
 
     // 배열 순서변경 메서드인 sort() 내부에 return값을
     // 사용하여 순서를 변경한 새로운 배열을 만들어준다!
-    return (a = b ? 0 : a > b ? -1 : 1);
+    return a == b ? 0 : a > b ? -1 : 1;
     // 비?집:(눈?집:놀이동산)
 });
 // console.log(preNewData);
@@ -231,26 +229,27 @@ preBox.forEach((ele, idx) => {
     <div>
         <h3>${preNewData[idx].title}</h3>
         <p>${preNewData[idx].story}</p>
-    <div>
+    </div>
     `;
 }); //////////// forEach ////////////////
-
 
 ///////////////////////////////////////////////
 ///////// 최신 동영상 영역 데이터 뿌리기 ////////
 // 대상: .clip-box
-const clipBox = dFn.qs('.clip-box');
+const clipBox = dFn.qs(".clip-box");
 console.log(clipBox);
 
-// 생성할 데이터  
-let clipCode = '';
+// 생성할 데이터
+let clipCode = "";
 
 // 데이터 매칭하여 태그만들기
 // 배열데이터 이므로 forEach사용!
-clipData.forEach(val=>{
+clipData.forEach((val) => {
     clipCode += `
     <li>
-        <iframe src="https://www.youtube.com/embed/${val.mvid}"></iframe>
+        <div class="clip-mv-box">
+            <img src="./images/clip_img/${val.idx}.jpg" alt="${val.subtit}">
+        </div>
         <h4>${val.subtit}</h4>
         <h3>${val.title}</h3>
     </li>
@@ -261,3 +260,74 @@ console.log(clipCode);
 
 // 코드 넣기
 clipBox.innerHTML = `<ul>${clipCode}</ul>`;
+
+/////////// 최신동영상 파트 이동기능 구현 //////////////
+// 1. 요구사항 : 버튼 한번에 한 영상씩 이동
+//              양쪽끝에가면 이동중단, 해당방향버튼 사라짐!
+
+// 2. 대상성정
+// 2-1. 이벤트 대상 : btn-box button
+const btnClip = dFn.qsa(".btn-box button");
+
+// 2-2. 변경대상 : .clip-box ul
+const clipList = dFn.qs(".clip-box ul");
+
+// 3. 변수셋팅 ////////////////////////
+// 3-1. 리스트 개수
+const CNT_LIST = dFn.qsaEl(clipList, "li").length;
+// 3-2. 화면당 리스트노출 개수
+const LIMIT_LIST = 4;
+// 3-3. 이동 한계수
+const LIMIT_MOVE = CNT_LIST - LIMIT_LIST;
+// 3-4. 이동 단위수 : 간격이동까지 고려한 한번에 이동할 단위 -25.5%
+const BLOCK_NUM = 25.5;
+// 3-5. 이동횟수 : 단위만큼 이동할 횟수
+let mvNum = 0;
+
+// console.log(btnClip,clipList,'이동 한계수:',LIMIT_MOVE);
+
+// 4. 이벤트 셋팅하기 //////////
+btnClip.forEach((ele) => {
+    dFn.addEvt(ele, "click", moveClip);
+}); /////////// forEach ////////////
+
+// 5. 함수 만들기 /////////////////
+function moveClip() {
+    // 1. 오른쪽 버튼 여부
+    let isR = this.classList.contains("fa-chevron-right");
+    console.log("나야나:", isR);
+    // 2. 버튼별 이동분기
+    if (isR) {
+        // 오른쪽버튼
+        // 이동한계수를 체크하여 이동수를 증가시킴
+        mvNum++;
+        // 마지막한계수를 넘어가면 마지막 수에 고정!
+        if (mvNum > LIMIT_MOVE) {
+            // 마지막수 고정
+            mvNum = LIMIT_MOVE;
+            // 마지막버튼 숨기기
+            btnClip[1].style.display = "none";
+        } else {
+            // 첫번째버튼 보이기
+            btnClip[0].style.display = "block";
+        }
+    } ///////// if //////////
+    else {
+        // 왼쪽버튼
+        // 이동한계수를 체크하여 이동수를 감소시킴
+        mvNum--;
+        // 첫번째한계수를 넘어가면 0에 고정!
+        if (mvNum < 0) {
+            // 0에 고정
+            mvNum = 0;
+            // 첫번째버튼 숨기기
+            btnClip[0].style.display = "none";
+        } else {
+            // 마지막버튼 보이기
+            btnClip[1].style.display = "block";
+        }
+    } ///////// if //////////
+
+    // 3. 이동반영하기 : - (단위수*이동수) %
+    clipList.style.left = -(BLOCK_NUM * mvNum) + "%";
+} ///////////// moveClip 함수 /////////////
