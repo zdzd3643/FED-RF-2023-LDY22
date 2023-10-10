@@ -36,12 +36,17 @@ body{
     /* outline: 2px dashed yellow; */
     /* 나간배경 숨기기 */
     overflow: hidden;
+
+    /* 손가락모양 */
+    cursor: pointer;
 }
 /* 맵버튼 가상요소로 무한이동 배경넣기 */
 .btn-map::before{
     content: '';
     position: absolute;
+    left: 0;
     width: 200%;
+    height: 100%;
     background: url(../images/street.jpg) repeat-x 0/50% 100%;
     /* 애니메이션 */
     animation: bg-ani 2s linear infinite;
@@ -51,6 +56,34 @@ body{
     to{
         left: -100%;
     }
+}
+
+/* 3-1.걷는존 */
+.spani1{
+    position: relative;
+    width: 40px;
+    aspect-ratio: 100/176;
+    /* height: 176px; */
+    margin: 0 auto;
+    margin-top: 25px;
+
+    background: url(../images/spAni03.png) no-repeat;
+    background-size: auto 100%;
+
+    /* 애니메이션: 이시이지반방마 */
+    animation: spani1 1s steps(8) infinite;
+    /* outline: 5px solid red; */
+}
+
+/* 걷는존 키프레임 */
+@keyframes spani1 {
+    to{
+        background-position-x: calc(40px*-8);
+        /* 한개당 가로크기 * 장면수 */
+    }
+    /* 배경이미지 x축 이동일 경우
+    줄였을때 이미지 전체 가로크기를
+    마이너스 값으로 써주면된다! */
 }
 /* 1-1. 로고 */
 .tit{
