@@ -281,7 +281,7 @@ function insertHcode(){
     // 달력 html 코드를 리턴함!
     return `
     <!-- 달력전체박스 -->
-    <div class="calender">
+    <div class="calendar">
       <!-- 달력상단:해당년/월표시 -->
       <header class="header">
         <!-- 달력이동버튼:이전 -->
