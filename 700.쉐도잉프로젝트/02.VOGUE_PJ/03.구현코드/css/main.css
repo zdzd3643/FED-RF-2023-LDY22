@@ -2,8 +2,8 @@
 /* 보그 PJ 메인페이지 CSS - main.css */
 
 /* 공통 외부CSS */
-@import url(core.css);
 @import url(reset.css);
+@import url(core.css);
 @import url(common.css);
 
 /* 개별배경이미지 */
