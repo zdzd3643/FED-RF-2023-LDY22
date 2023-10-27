@@ -108,7 +108,9 @@ aside.smbx{
 /************* 3. 하단영역 *************/
 .footer{
     border-top: 1px solid #ccc;
+    padding-top: 20px;
     padding-bottom: 80px;
+    background: url(../images/footer_bg_tvn-pc.png) no-repeat center/cover;
 }
 
 /* 하단링크박스 */
@@ -155,4 +157,23 @@ aside.smbx{
     text-align: center;
     border-radius: 50%;
     border: 1px solid gray;
+}
+/* 모바일 햄버거 버튼 */
+.ham {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+    font-size: 40px;
+    transform: scaleX(1.5);
+
+    /* 처음에 숨기기 */
+    display: none;
+}
+/* 햄버거모양 가상요소넣기 */
+.ham::before{
+    content: '≡';
 }
