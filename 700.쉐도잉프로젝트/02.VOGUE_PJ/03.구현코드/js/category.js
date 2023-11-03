@@ -1,5 +1,6 @@
 // 보그 PJ 메인 페이지 JS - category.js
 
+// 
 // 카테고리 데이터 불러오기 : 어서써 타입 제이슨
 import catData from './data/category_data.json' assert {type:'json'};
 
