@@ -115,7 +115,7 @@ export default {
         </li>
     </ul>
     `,
-    // 모바일버튼코드 : header.top 안에 넣기
+    // 모바일버튼코드 : header.top-area 안에 넣기
     mobtn:`
         <!-- 모바일용 햄버거버튼 -->
         <a href="#" class="mobtn hbtn fi fi-nav-icon">

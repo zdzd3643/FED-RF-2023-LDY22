@@ -6,6 +6,7 @@
 @import url(core.css);
 @import url(common.css);
 
+
 /* 컨텐츠 영역 속박스 */
 .main-area{
     min-height: 600px;
