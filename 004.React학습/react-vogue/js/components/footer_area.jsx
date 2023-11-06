@@ -16,6 +16,8 @@ export default function FooterArea(){
   
     return(
       <React.Fragment>
+    <div id="footer-area">
+      <footer className="footer-area ibx common-area">
         {/* 3-1. 하단로고 */}
         <div className="blogo">
           <img src="./images/footer_logo.png" alt="하단로고" />
@@ -27,7 +29,12 @@ export default function FooterArea(){
         </address>
         {/* 3-3. 하단링크*/}
         <ul className="blink">{makeList(fTxt)}</ul>
+        </footer>
+    </div>
+    {/* 위로가기버튼 */}
+    <a href="#" className="tbtn fi fi-angle-up">
+      <span className="ir">위로가기버튼</span>
+    </a>
       </React.Fragment>
     );
-  
   } ////////////// FooterArea 컴포넌트 ////////////////
