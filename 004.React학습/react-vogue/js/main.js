@@ -2,6 +2,7 @@
 
 import dFn from "./dom.js";
 
+
 // [1] 메인 페이지 등장액션 클래스 넣기
 // 대상: .main-area section
 const hideBox = $('.main-area section');
@@ -32,9 +33,8 @@ hideBox.each((idx,ele)=>{
 let winH = $(window).height()/3*2;
 console.log('윈도우 높이값:',winH);
 
-$(window).scroll(()=>{
-    
-    // 등장액션 클래스 적용하기 ////
+$(window).scroll(()=>{    
+    // 등장액션 클래스 적용하기 //////
     hideBox.each((idx,ele)=>{
         if(idx!=0){
             let val = dFn.getBCR(ele);
@@ -47,3 +47,4 @@ $(window).scroll(()=>{
     }); //////// each ///////
 
 }); ///////// scroll /////////////
+

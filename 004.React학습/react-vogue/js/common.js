@@ -9,6 +9,7 @@ import tData from './data/com_module.js';
 // 부드러운 스크롤 모듈
 import { startSS, setPos } from "./smoothScroll23.js";
 
+
 // [1] 상단/하단 공통 모듈 넣기 ////////
 
 // 대상선정: .common-area
@@ -21,10 +22,12 @@ comArea[0].innerHTML = tData.topArea;
 // 하단영역 html 넣기
 comArea[1].innerHTML = tData.footerArea;
 
-// 모바일 메뉴 요소 추가로 넣기 : .top-area 맨끝추가
+// 모바일 메뉴버튼 요소 추가로 넣기 : .top-area 맨끝추가
 comArea[0].innerHTML += tData.mobtn;
 // 모바일 메뉴 박스 추가로 넣기 : #top-area 맨끝추가
 comArea[0].parentElement.innerHTML += tData.mobx;
+
+
 
 // [2] 부드러운 스크롤 적용 //////////
 startSS();
@@ -51,7 +54,7 @@ $(window).scroll(()=>{
     //     300미만일때 숨기기
     // 대상: .tbtn
     if(scTop>300) tbtn.addClass('on');
-    else tbtn.removeClass('on');
+    else tbtn.removeClass('on');  
 }); ///////// scroll /////////////
 
 // 맨위로 버튼 클릭시 맨위로 가기 //
@@ -64,14 +67,14 @@ tbtn.click((e)=>{
     console.log('나클릭!');
 }); /////////// click //////////
 
-////////////////////////////////////////////////////
+/////////////////////////////////////////////////////
 //// 모바일 버튼 클릭시 메뉴박스/검색박스 보이기/숨기기//
 /////////////////////////////////////////////////////
 // 대상: .hbtn(햄버거버튼) / .sbtn(검색버튼)
-// 요구사항: 햄버거 버튼은. mobx 보이기/숨기기
-// 검색버튼은 .mobx 보이기/숨기기
-// 제이쿼리 메서드 : click(),slideToggle()
-$('.hbtn').click(()=>$('.mobx').slideToggle(300));
+// 요구사항: 햄버거 버튼은 #mobx 보이기/숨기기
+//          검색버튼은 .mos 보이기/숨기기
+// 제이쿼리 메서드 : click(), slideToggle()
+$('.hbtn').click(()=>$('#mobx').slideToggle(300));
 $('.sbtn').click(()=>$('.mos').slideToggle(300));
 
 // 토글이라는 말은 두가지를 전환하는 버튼을 말함
@@ -79,5 +82,3 @@ $('.sbtn').click(()=>$('.mos').slideToggle(300));
 // toggle() -> show() / hide() 전환
 // slideToggle() -> slideDown() / slideUp() 전환
 // fadeToggle() -> fadeIn() / fadeOut() 전환
-
-
