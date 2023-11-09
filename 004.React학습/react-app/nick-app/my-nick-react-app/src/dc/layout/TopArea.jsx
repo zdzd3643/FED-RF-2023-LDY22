@@ -1,9 +1,10 @@
 // 상단영역 컴포넌트
 // GNB 데이터
-import { Logo } from "./Logo";
-import { menu } from "./data/gnb";
+import { Logo } from "../contents/Logo";
+import { menu } from "../data/gnb";
 
-export function TopArea(){
+export function TopArea(props) {
+// chgFn 속성 - 메인함수 chgMenu() 호출{
     return(
         <>
         {/* 1.상단영역 */}
@@ -15,11 +16,16 @@ export function TopArea(){
                         <Logo />
                     </li>
                     {
-                        
-                        menu.map((v,i)=>
+                        menu.map(
+                        (v,i)=>(
                         <li key={i}>
-                            <a href="#">{v.txt}</a>
-                        </li> 
+                            <a 
+                            href="#"
+                            onClick={() => 
+                            props.chgFn(v.txt == "Home" ? "main" : v.txt)
+                            }
+                            >{v.txt}</a>
+                        </li> )
                         /* 
                         map()을 사용하여 태그를 생성할때
                         데이터의 유일키를 key속성으로 만들지 않으면
@@ -35,5 +41,5 @@ export function TopArea(){
             </nav>
         </header>
         </>
-    )
+    );
 }
