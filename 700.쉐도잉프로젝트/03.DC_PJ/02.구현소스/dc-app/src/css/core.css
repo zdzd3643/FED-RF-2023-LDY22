@@ -1,0 +1,13 @@
+/* DC.com 핵심공통 CSS - core.css */
+
+/* 나눔바른고딕 */ 
+@font-face {
+    font-family: 'Ubuntu', sans-serif;
+    src: url(../static/fonts/Ubuntu-Regular.woff) format("woff");
+}
+
+/* 피스틸리체 */
+@font-face {
+    font-family: 'Ubuntu Condensed', sans-serif;
+    src: url(../static/fonts/UbuntuCondensed-Regular.woff) format("woff");
+}
