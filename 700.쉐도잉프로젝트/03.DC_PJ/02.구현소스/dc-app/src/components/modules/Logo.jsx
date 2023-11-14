@@ -3,7 +3,7 @@ import React from "react";
 import { isrc } from "../data/imgSrc";
 
 export const Logo = (props) => {
-    // props.logoStlye = 상단,하단구분 로고코드
+    // props.logoStyle : 상단,하단구분 로고코드
     // 객체형 스타일 적용
     const myStyle = {
         top:{
@@ -21,25 +21,25 @@ export const Logo = (props) => {
     // 이미지 스타일 변경 객체
     const myStyleImg = {
         top: "45px",
-        botton: "80px"
+        bottom: "80px"
     }
 
     // 자식컴포넌트 처리용함수
     const nayaLogo = (txt) => {
         console.log(txt);
-    }; /////////// nayaLogo //////////
+    }; ///////// nayaLogo //////////
 
-    // 코드 리턴
+    // 코드 리턴 //////////////////////////
     return (
         <h1 
-        style={myStyle[props.logoStyle]}
-        onClick={()=>nayaLogo('나,로고야!')}>
-            <img 
-            src={isrc.logo} 
-            alt="DC logo"
-            style={{
-                width:myStyleImg[props.logoStyle]
-            }} />
+            style={myStyle[props.logoStyle]}
+            onClick={()=>nayaLogo('나,로고야!')}>
+                <img   
+                    src={isrc.logo} 
+                    alt="DC logo"
+                    style={{
+                        width: myStyleImg[props.logoStyle]
+                    }} />
         </h1>
     );
 

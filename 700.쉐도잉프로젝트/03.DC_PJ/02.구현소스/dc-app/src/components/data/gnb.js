@@ -6,7 +6,7 @@ export const menu = [
     // },
     {
         txt:"CHARACTERS",
-        link:"/characters",
+        link:"/character",
     },
     {
         txt:"COMICS",
@@ -42,7 +42,7 @@ export const menu = [
                 txt: "DC ON HBO MAX",
                 link: "/mv",
             },
-        ],
+        ]
     },
     {
         txt:"GAMES",

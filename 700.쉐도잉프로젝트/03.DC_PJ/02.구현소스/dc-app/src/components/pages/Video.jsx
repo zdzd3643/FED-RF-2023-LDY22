@@ -2,6 +2,7 @@
 
 import { isrc } from "../data/imgSrc";
 
+
 export function Video(){
     return(
         <>
@@ -10,4 +11,5 @@ export function Video(){
             <iframe src={isrc.video} />
         </>
     )
-} ///////////// Video 컴포넌트 //////////////
+
+} ////////////  Video 컴포넌트 ///////////
