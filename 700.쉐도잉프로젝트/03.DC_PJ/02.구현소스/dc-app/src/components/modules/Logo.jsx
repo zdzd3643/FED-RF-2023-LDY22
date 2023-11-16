@@ -46,7 +46,7 @@ export const Logo = (props) => {
     return (
         <h1 
             style={myStyle[props.logoStyle]}
-            onClick={()=>nayaLogo('나,로고야!')}>
+            onClick={()=>nayaLogo('/')}>
                 <img   
                     src={isrc.logo} 
                     alt="DC logo"

@@ -1,21 +1,27 @@
 // Dc.com 섹션소개 컴포넌트 : SecIntro
 
 // 섹션소개모듈 데이터 가져오기
-import { secIntroData } from "../data/secintro";
+import { secIntroData } from "../data/sec_intro";
 
 // 섹션소개모듈용 CSS 불러오기
 import "../../css/sec_intro.css"
 
 // 링크 이동을 위한 라우터 불러오기
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 // 구조정의:
-// Root >
+// Root > section > img Box + title Box + button Box
 
 export function SecIntro(){
 
   // 선택데이터
   const selData = secIntroData;
+
+  // 라우터 이동함수
+  const goNav = useNavigate();
+
+  // 라우터 이동함수
+  const chgPage = (txt) => goNav(txt); 
 
   return(
     <>
@@ -36,11 +42,9 @@ export function SecIntro(){
             </div>
             {/* 3. 버튼박스 */}
             <div className="btnbx">
-              <Link to={v.link}>
-              <button>
+              <button onClick={()=>goNav(v.link)}>
                 {v.btn.toUpperCase()}
               </button>
-              </Link>
             </div>
           </div>
           )
