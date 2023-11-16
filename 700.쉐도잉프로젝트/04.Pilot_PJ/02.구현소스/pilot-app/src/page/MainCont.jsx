@@ -25,16 +25,19 @@ export function MainCont() {
   return (
     <>
       {/* 1. 배너페이지 */}
-      <section id="ban" className="page" style={{ background: "lightblue" }}>
+      <section id="ban" className="page" 
+      style={{ background: "lightblue" }}>
         <Banner />
       </section>
-      <section className="page" style={{ background: "lightcoral" }}></section>
-      <section className="page" style={{ background: "lightgreen" }}></section>
+      <section className="page" 
+      style={{ background: "lightcoral" }}></section>
+      <section className="page" 
+      style={{ background: "lightgreen" }}></section>
       <section
-        className="page"
-        style={{ background: "lightseagreen" }}
-      ></section>
-      <section className="page" style={{ background: "lightpink" }}></section>
+      className="page"
+      style={{ background: "lightseagreen" }}></section>
+      <section className="page" 
+      style={{ background: "lightpink" }}></section>
     </>
   );
 } //////// MainCont 컴포넌트 ///////
