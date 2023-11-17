@@ -6,8 +6,8 @@ import { VidIntro } from "../modules/Vidintro";
 export function Comics(){
     return(
         <>
-            <VidIntro cat ="COMICS" cls="on" />
             <Banner category="COMICS" />
+            <VidIntro cat ="COMICS" cls="on" />
         </>
     )
 
