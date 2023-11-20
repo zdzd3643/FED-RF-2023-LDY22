@@ -2,7 +2,7 @@
 
 import { Banner } from "../modules/Banner";
 import { VidIntro } from "../modules/Vidintro";
-import { VidSwipe } from "../modules/Vidswipe";
+import { VidSwipe } from "../modules/VidSwipe";
 
 export function Movies(){
     return(

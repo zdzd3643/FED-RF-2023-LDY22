@@ -1,7 +1,6 @@
 // GNB 페이지별 메뉴 데이터 - gnb.js
-
 export const gnbData = {
-    "main":["MEN,WOMEN,STYLE"],
+    "main":["MEN","WOMEN","STYLE"],
     "men":[
       "NEW MEN'S ARRIVAL",
       "WINDBREAKER",

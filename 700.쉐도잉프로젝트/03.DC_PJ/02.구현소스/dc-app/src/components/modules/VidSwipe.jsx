@@ -21,10 +21,10 @@ export function VidSwipe(props){
     return(
       <>
       {/* 모듈코드 */}
-      <section className="vidswbox">
+      <section className="vid-swbox">
         {/* 1. 모듈타이틀 */}
         <h2 className="tit">{props.tit}</h2>
-        {/* 2. 스와이퍼 컴포넌트 */}
+        {/* 2. 스와이퍼 컴포넌트 : SwiperVid */}
         <SwiperVid />
         {/* 3. 비디오 재생창 */}
         <section className="vid-bx">
@@ -40,5 +40,5 @@ export function VidSwipe(props){
         </section>
       </section>
       </>
-    )
-} ////////////// vidSwipe 컴포넌트 /////////////
+    );
+} ////////////// VidSwipe 컴포넌트 /////////////
