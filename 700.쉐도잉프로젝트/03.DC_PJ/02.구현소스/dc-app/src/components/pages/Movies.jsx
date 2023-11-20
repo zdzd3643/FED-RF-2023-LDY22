@@ -2,12 +2,14 @@
 
 import { Banner } from "../modules/Banner";
 import { VidIntro } from "../modules/Vidintro";
+import { VidSwipe } from "../modules/Vidswipe";
 
 export function Movies(){
     return(
         <>
             <Banner category="MOVIES" />
             <VidIntro cat ="MOVIES" cls="on" />
+            <VidSwipe tit="TRAILERS, CLIPS AND MORE" />
         </>
     )
 
