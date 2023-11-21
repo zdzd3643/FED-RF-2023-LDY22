@@ -26,10 +26,11 @@ import "./css/swiper_vid.css";
 // (여기서는 페이지네이션,네비게이션,자동넘김)
 import { Navigation } from "swiper/modules";
 
-export function SwiperVid() {
+export function SwiperVid(props) {
+  // props.cat - 카테고리명 -> 데이터선택 객체속성명
 
   // 선택 데이터 : 여기서는 그대로 가져옴
-  const selData = swVidData;
+  const selData = swVidData[props.cat];
 
   const showVid = (src, tit) => {
     // src - 비디오경로, tit - 비디오제목
@@ -73,7 +74,7 @@ export function SwiperVid() {
         // 스와이퍼 사이즈별 슬라이드수 변경!
         breakpoints={{
           200: {
-              slidesPerView: 2,
+              slidesPerView: 1,
           },
           700: {
               slidesPerView: 2,
