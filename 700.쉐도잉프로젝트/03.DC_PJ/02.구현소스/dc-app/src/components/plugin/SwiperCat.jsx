@@ -53,7 +53,15 @@ export function SwiperCat() {
             /* idx 고유번호가 7번이하만 출력 */
             Number(v.idx) <= 7 && 
             <SwiperSlide key={i}>
-              <Link to="/detail">
+              <Link 
+                to="/detail"
+                state={{
+                  cname: v.cname,
+                  cdesc: v.cdesc,
+                  facts: v.facts,
+                }}
+                >
+                  {/* 라우터 데이터 전달은 state 속성에 객체로 보낸다! */}
                 <section className="sw-inbox2">
                   {/* 캐릭터이미지영역 */}
                   <div className="cat-img2">
@@ -70,4 +78,4 @@ export function SwiperCat() {
       </Swiper>
     </>
   );
-} /////////// SwiperApp 컴포넌트 ///////////
+} /////////// SwiperCat 컴포넌트 ///////////

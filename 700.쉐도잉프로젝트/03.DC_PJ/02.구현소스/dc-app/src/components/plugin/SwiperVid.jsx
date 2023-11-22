@@ -121,4 +121,4 @@ export function SwiperVid(props) {
       </Swiper>
     </>
   );
-} /////////// SwiperApp 컴포넌트 ///////////
+} /////////// SwiperVid 컴포넌트 ///////////

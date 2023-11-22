@@ -24,13 +24,20 @@ export function TopArea() {
             <header className="top-area">
                 {/* 네비게이션 GNB파트 */}
                 <nav className="gnb">
-                    <ul>
-                        <li>
-                            <Logo logoStyle="top" />
-                        </li>
-                        {menu.map((v, i) => (
-                            <li key={i}>
-            <Link to={v.link}>{v.txt}</Link>
+                <ul>
+                    {/* 1. 로고 컴포넌트 */}
+                <li>
+                    <Logo logoStyle="top" />
+                </li>
+                {/* 2. GNB메뉴 데이터기반으로 li태그 생성하기 */}
+                {menu.map((v, i) => (
+                    <li key={i}>
+                {
+                // 하위메뉴가 있으면 일반a요소에 출력
+                // 없으면 Link 라우팅 출력
+                v.sub ? <a href="#">{v.txt}</a>:
+                <Link to={v.link}>{v.txt}</Link>
+                }
             {/* 서브메뉴 데이터가 있으면 하위 그리기 */
             v.sub && (
                 <div className="smenu">
