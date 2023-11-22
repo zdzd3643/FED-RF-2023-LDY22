@@ -38,7 +38,7 @@ export function SwiperVid(props) {
     // 1. 대상선정
     // 1-1. 아이프레임 : .play-vid iframe
     const ifr = $('.play-vid iframe');
-    // 1-2. 타이틀 박스 : .vid-bx
+    // 1-2. 비디오 박스 : .vid-bx
     const vbx = $('.vid-bx'); 
     // 1-3. 타이틀 박스 : .ifr-tit
     const itit = $('.ifr-tit');
