@@ -38,10 +38,10 @@ export function Banner(props) {
     const sldBox = $(tg).siblings(".slider");
     // (2) 슬라이드 블릿 : 형제요소는 .indic임!
     const indic = $(tg).siblings('.indic').find('li');
-    // console.log('블릿:',indic);
+    console.log('블릿:',indic);
     // (3) 슬라이드 개수
     const sCnt = sldBox.find('li').length;
-    // console.log('슬라이드개수:',sCnt);
+    console.log('슬라이드개수:',sCnt);
   
     // 3. 기능구현
       // 0. 광클금지 /////////////
