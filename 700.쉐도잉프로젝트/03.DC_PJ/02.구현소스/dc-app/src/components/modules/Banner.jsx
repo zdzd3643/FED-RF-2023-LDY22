@@ -84,7 +84,7 @@ export function Banner(props) {
         if(sNum<0) sNum=sCnt-1;
       } /////// else /////////
   
-      console.log('슬순번:',sNum);
+      console.log('슬라이드 순번:',sNum);
   
       // 블릿해당순번 클래스'on'넣기(다른li는 제거)
       indic.eq(sNum).addClass('on')

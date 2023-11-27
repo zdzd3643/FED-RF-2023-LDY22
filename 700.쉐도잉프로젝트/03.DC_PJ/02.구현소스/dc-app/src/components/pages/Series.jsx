@@ -1,7 +1,7 @@
 // 시리즈페이지 메인컨텐츠
 
 import { Banner } from "../modules/Banner";
-import { VidIntro } from "../modules/VidIntro";
+import { VidIntro } from "../modules/Vidintro";
 import { VidSwipe } from "../modules/VidSwipe";
 
 export function Series(){
