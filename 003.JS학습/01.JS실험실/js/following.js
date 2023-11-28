@@ -1,5 +1,6 @@
 // 따라다니는 원 JS - following.js
 
+
 // 1. 이벤트 등록하기
 window.addEventListener('DOMContentLoaded',loadFn);
 
