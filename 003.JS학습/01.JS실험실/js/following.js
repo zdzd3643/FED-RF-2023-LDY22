@@ -70,7 +70,7 @@ function loadFn(){
     let gap = mover.clientWidth/2;
     // 선택요소의 크기 JS
     // width는 clientWidth, height는 clientHeight
-    console.log('무버width:',gap);
+    // console.log('무버width:',gap);
         
     // 2. 이벤트 대상에 마우스 무드 이벤트가 적용될때
     // 무버가 따라다니게 기능 구현
@@ -83,7 +83,7 @@ function loadFn(){
         mover.style.top = posy + 'px';
         mover.style.left = posx + 'px';
 
-        // console.log('pageX',e.pageX,'/pageY',e.pageY);
+        console.log('pageX',e.pageX,'/pageY',e.pageY);
         // console.log('screenX',e.screenX,'/screenY',e.screenY);
         // console.log('offsetX',e.offsetX,'/offsetY',e.offsetY);
         // console.log('clientX',e.clientX,'/clientY',e.clientY);
