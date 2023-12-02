@@ -1,7 +1,7 @@
 // 비디오페이지 메인컨텐츠
 
 import { isrc } from "../data/imgSrc";
-import { VidIntro } from "../modules/VidIntro";
+import { VidIntro } from "../modules/Vidintro";
 
 
 export function Video(){
