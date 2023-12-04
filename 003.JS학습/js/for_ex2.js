@@ -17,10 +17,10 @@ hcode += "<ul>";
 for (var i = 0; i < 50; i++) {
     hcode += `
     <li>
-        <img src="./images/dress/${1+1}.jpg" alt="dress">
+        <img src="./images/dress/${i}.jpg" alt="dress">
         <div class="item_info">
-            <h3>상품명${1+1}</h3>
-            <h4>가격${1+1}</h4>
+            <h3>상품명${i}</h3>
+            <h4>가격${i}</h4>
         </div>
     </li>
     `;
