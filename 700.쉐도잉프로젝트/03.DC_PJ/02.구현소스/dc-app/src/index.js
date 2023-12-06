@@ -58,6 +58,7 @@ export default function App() {
     /* basename속성은 package.json의 "homepage"속성값을 읽어옴 */
     // <BrowserRouter basename={process.env.PUBLIC_URL}>
     // <BrowserRouter>
+    
     // *basename 을 안써도 HashRouter package.json의 homepage 속성값을 자동으로 연결함
     <HashRouter>
       <Routes>
